@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BuildRight Construction Website
+
+A modern, responsive website for a construction company built with HTML, Tailwind CSS, and JavaScript.
+
+## Features
+
+- Responsive design that works on all devices
+- Modern and professional UI with smooth animations
+- Interactive gallery with modal view
+- Contact form with validation
+- Smooth scrolling navigation
+- Mobile-friendly navigation menu
+- Animated sections on scroll
+- Custom styling and animations
+
+## Technologies Used
+
+- HTML5
+- Tailwind CSS
+- JavaScript (ES6+)
+- Font Awesome Icons
+- Intersection Observer API
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Open `index.html` in your web browser
+3. No build process required - the site uses CDN links for all dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Structure
+
+```
+construction/
+├── index.html          # Main HTML file
+├── styles.css          # Custom CSS styles
+├── script.js           # JavaScript functionality
+└── README.md          # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Colors
+The website uses a blue color scheme by default. You can customize the colors by modifying the Tailwind classes in `index.html` and the custom styles in `styles.css`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Images
+Replace the placeholder images in the gallery section with your own images. Update the image sources in the `index.html` file.
 
-## Learn More
+### Content
+Edit the text content in `index.html` to match your company's information, including:
+- Company name
+- Mission and vision statements
+- Services offered
+- Contact information
+- Social media links
 
-To learn more about Next.js, take a look at the following resources:
+## Browser Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website is compatible with all modern browsers:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Performance
 
-## Deploy on Vercel
+The website is optimized for performance with:
+- Lazy loading of images
+- Smooth animations
+- Efficient CSS using Tailwind
+- Minimal JavaScript footprint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
