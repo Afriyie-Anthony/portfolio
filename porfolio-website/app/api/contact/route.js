@@ -4,11 +4,11 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
   try {
     // Log environment variables (without exposing sensitive data)
-    console.log('Email configuration check:', {
-      hasUser: !!process.env.EMAIL_USER,
-      hasPass: !!process.env.EMAIL_PASS,
-      userEmail: process.env.EMAIL_USER
-    });
+    // console.log('Email configuration check:', {
+    //   hasUser: !!process.env.EMAIL_USER,
+    //   hasPass: !!process.env.EMAIL_PASS,
+    //   userEmail: process.env.EMAIL_USER
+    // });
 
     const { name, email, phone, message } = await request.json();
 
@@ -49,7 +49,7 @@ export async function POST(request) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'owusuboat05@gmail.com',
+      to: process.env.RECEIVER_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
