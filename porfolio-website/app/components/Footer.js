@@ -65,13 +65,37 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>123 Construction Ave</li>
-              <li>Accra, Ghana</li>
-              <li>Phone: +233 123 456 789</li>
-              <li>Email: info@affulexis.com</li>
-            </ul>
+            <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+            <div className="space-y-2">
+              <p className="text-gray-300">
+                H/N. 151/4, Sunyani Newtown
+              </p>
+              <p className="text-gray-300">
+                Box 1320, Sunyani
+              </p>
+              <div className="space-y-1">
+                <p className="text-gray-300">
+                  <a href="tel:+233240139683" className="hover:text-primary">
+                    +233 24 013 9683
+                  </a>
+                </p>
+                <p className="text-gray-300">
+                  <a href="tel:+233546248694" className="hover:text-primary">
+                    +233 54 624 8694
+                  </a>
+                </p>
+                <p className="text-gray-300">
+                  <a href="tel:+233203858047" className="hover:text-primary">
+                    +233 20 385 8047
+                  </a>
+                </p>
+              </div>
+              <p className="text-gray-300">
+                <a href="mailto:affulexis1971@gmail.com" className="hover:text-primary">
+                  affulexis1971@gmail.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 

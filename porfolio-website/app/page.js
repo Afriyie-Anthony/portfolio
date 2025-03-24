@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
 import Footer from './components/Footer';
@@ -7,6 +8,50 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: false
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: false });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setStatus({ loading: false, success: true, error: false });
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      setStatus({ loading: false, success: false, error: true });
+    }
+  };
+
   return (
     <main>
       <Navbar />
@@ -119,7 +164,7 @@ export default function Home() {
               <p className="text-gray-600 mb-8">
                 Ready to start your construction project? Contact us today for a free consultation.
               </p>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                     Name
@@ -127,6 +172,10 @@ export default function Home() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
                   />
                 </div>
@@ -137,6 +186,24 @@ export default function Home() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
                   />
                 </div>
@@ -146,13 +213,33 @@ export default function Home() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
-                </button>
+                <div>
+                  <button
+                    type="submit"
+                    disabled={status.loading}
+                    className={`w-full btn-primary ${status.loading ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  >
+                    {status.loading ? 'Sending...' : 'Send Message'}
+                  </button>
+                </div>
+                {status.success && (
+                  <div className="text-green-600 text-center">
+                    Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {status.error && (
+                  <div className="text-red-600 text-center">
+                    Failed to send message. Please try again later.
+                  </div>
+                )}
               </form>
             </div>
             <div className="relative h-[500px]">

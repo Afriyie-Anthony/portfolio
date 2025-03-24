@@ -6,29 +6,28 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const galleryImages = [
-  { src: '/images/const_img1.jpg', category: 'commercial' },
-  { src: '/images/const_img2.jpg', category: 'residential' },
+  { src: '/images/const_img2.jpg', category: 'commercial' },
   { src: '/images/const_img3.jpg', category: 'industrial' },
   { src: '/images/const_img4.jpg', category: 'commercial' },
-  { src: '/images/const_img5.jpg', category: 'residential' },
+  { src: '/images/const_img5.jpg', category: 'industrial' },
   { src: '/images/const_img6.jpg', category: 'industrial' },
   { src: '/images/const_img7.jpg', category: 'commercial' },
-  { src: '/images/const_img8.jpg', category: 'residential' },
+  { src: '/images/const_img8.jpg', category: 'industrial' },
   { src: '/images/const_img9.jpg', category: 'industrial' },
   { src: '/images/const_img10.jpg', category: 'commercial' },
-  { src: '/images/const_img11.jpg', category: 'residential' },
+  { src: '/images/const_img11.jpg', category: 'industrial' },
   { src: '/images/const_img12.jpg', category: 'industrial' },
   { src: '/images/const_img13.jpg', category: 'commercial' },
-  { src: '/images/const_img14.jpg', category: 'residential' },
+  { src: '/images/const_img14.jpg', category: 'industrial' },
   { src: '/images/const_img15.jpg', category: 'industrial' },
   { src: '/images/const_img16.jpg', category: 'commercial' },
-  { src: '/images/const_img17.jpg', category: 'residential' },
+  { src: '/images/const_img17.jpg', category: 'industrial' },
   { src: '/images/const_img18.jpg', category: 'industrial' },
   { src: '/images/const_img19.jpg', category: 'commercial' },
-  { src: '/images/const_img20.jpg', category: 'residential' },
+  { src: '/images/const_img20.jpg', category: 'industrial' },
   { src: '/images/const_img21.jpg', category: 'industrial' },
   { src: '/images/const_img22.jpg', category: 'commercial' },
-  { src: '/images/const_img23.jpg', category: 'residential' },
+  { src: '/images/const_img23.jpg', category: 'industrial' },
   { src: '/images/const_img24.jpg', category: 'industrial' },
   { src: '/images/const_img25.jpg', category: 'commercial' },
 ];
@@ -45,16 +44,25 @@ export default function Gallery() {
     <main>
       <Navbar />
 
-      {/* Gallery Header */}
-      <section className="pt-32 pb-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-            Our Project Gallery
-          </h1>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
-            Explore our portfolio of successful construction projects across Ghana.
-            From commercial developments to residential communities, we deliver excellence in every project.
-          </p>
+      {/* Gallery Hero Section */}
+      <section className="relative h-[50vh]">
+        <Image
+          src="/images/const_img3.jpg"
+          alt="Our Project Gallery Hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              Our Project Gallery
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+              Explore our portfolio of successful construction projects across Ghana
+            </p>
+          </div>
         </div>
       </section>
 
@@ -62,7 +70,7 @@ export default function Gallery() {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {['all', 'commercial', 'residential', 'industrial'].map((category) => (
+            {['all', 'commercial', 'industrial'].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}

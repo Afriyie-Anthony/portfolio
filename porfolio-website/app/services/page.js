@@ -45,53 +45,63 @@ export default function Services() {
     <main>
       <Navbar />
       
-      {/* Services Header */}
-      <section className="pt-32 pb-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-            Our Services
-          </h1>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
-            Comprehensive construction solutions for all your infrastructure needs
-          </p>
+      {/* Services Hero Section */}
+      <section className="relative h-[50vh]">
+        <Image
+          src="/images/const_img2.jpg"
+          alt="Our Services Hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              Our Services
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+              Comprehensive construction solutions for all your infrastructure needs
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-20">
+      {/* Main Services */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <div key={index} className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}>
-                <div className="relative h-[400px]">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    {service.title}
-                  </h2>
-                  <p className="text-gray-600 mb-8">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-600">
-                        <span className="text-primary mr-2">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="mt-8 btn-primary">
-                    Learn More
-                  </button>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'General Building',
+                description: 'Comprehensive building solutions for residential, commercial, and industrial structures. We handle everything from foundation to finishing, ensuring quality and durability in every project.',
+                icon: '🏗️'
+              },
+              {
+                title: 'Construction Works and Road Construction',
+                description: 'Expert road construction and infrastructure development services. From highways to local roads, we deliver durable and well-engineered transportation solutions.',
+                icon: '🛣️'
+              },
+              {
+                title: 'General Merchants',
+                description: 'One-stop shop for all your construction and building material needs. We supply high-quality materials, tools, and equipment for various construction projects.',
+                icon: '🏪'
+              },
+              {
+                title: 'Farms Input',
+                description: 'Providing essential agricultural inputs and supplies to support farming operations. We offer quality farm equipment, seeds, fertilizers, and other agricultural necessities.',
+                icon: '🌾'
+              },
+              {
+                title: 'Export and Import General Goods',
+                description: 'Facilitating international trade with our comprehensive import and export services. We handle logistics, customs clearance, and ensure smooth cross-border transactions.',
+                icon: '🌍'
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>

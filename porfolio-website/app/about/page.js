@@ -9,49 +9,55 @@ export default function About() {
     <main>
       <Navbar />
       
-      {/* About Header */}
-      <section className="pt-32 pb-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
-            About Affulexis Enterprise
-          </h1>
-          <p className="text-xl text-center text-gray-600 max-w-3xl mx-auto">
-            Building Ghana's future through excellence in construction and infrastructure development.
-          </p>
+      {/* About Hero Section */}
+      <section className="relative h-[50vh]">
+        <Image
+          src="/images/const_img4.jpg"
+          alt="About Us Hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              About Affulexis Enterprise
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+              Building Ghana's future through excellence in construction and infrastructure development.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Company Story */}
-      <section className="py-20">
+      {/* Our Story Section */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Story
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Founded in 2021, Affulexis Enterprise has grown from a small construction company to a leading force in Ghana's construction industry. Our journey is marked by a commitment to quality, innovation, and sustainable development.
-              </p>
-              <p className="text-gray-600 mb-6">
-                We believe in building not just structures, but lasting relationships with our clients and communities. Our team of experienced professionals brings together decades of expertise in various construction disciplines.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">100+</div>
-                  <div className="text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">50+</div>
-                  <div className="text-gray-600">Team Members</div>
-                </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  Affulexis Enterprise is a privately owned Ghanaian company based at Sunyam bono region.
+                </p>
+                <p>
+                  Affulexis Enterprise with various professional personnel if focus on delivering unique service on any given project both cominercial and industrial. Benefit derived from working with Affulexis Enterprise includes diligent coordination of work between the company's professionals and the customer in question for timely and sansfactory completion of project giving client's value for their money.
+                </p>
+                <p>
+                  Our company's focus on operation time delivery services and the application of project management techniques to ensure the procurement of materials, equipment and management team to handle any project start to finish on a timely manner.
+                </p>
+                <p>
+                  With our modern methodologies and state of the art machinery equipment and skilled technical, we are able to deliver services to domestic small business, large corporations and industrial projects firms across the length and breadth of the country.
+                </p>
               </div>
             </div>
-            <div className="relative h-[400px]">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image
                 src="/images/const_img4.jpg"
-                alt="About Us"
+                alt="Our Story"
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover"
               />
             </div>
           </div>
@@ -65,13 +71,13 @@ export default function About() {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600">
-                To deliver exceptional construction services that exceed client expectations while contributing to Ghana's infrastructure development through sustainable and innovative solutions.
+                The deliver the highest quality construction services at fair and market competitive prices using modern methodologies to excite any scale of work.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600">
-                To be the leading construction company in Ghana, recognized for our commitment to quality, safety, and sustainable development practices.
+                To maintain the higher levels of professionalism, strategy, honesty and fairness in our relationships with our clients supplies subcontractors and customers.
               </p>
             </div>
           </div>
