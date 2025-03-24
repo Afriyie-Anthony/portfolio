@@ -1,40 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const galleryImages = [
-  { src: '/images/const_img2.jpg', category: 'commercial' },
-  { src: '/images/const_img3.jpg', category: 'industrial' },
-  { src: '/images/const_img4.jpg', category: 'commercial' },
-  { src: '/images/const_img5.jpg', category: 'industrial' },
-  { src: '/images/const_img6.jpg', category: 'industrial' },
-  { src: '/images/const_img7.jpg', category: 'commercial' },
-  { src: '/images/const_img8.jpg', category: 'industrial' },
-  { src: '/images/const_img9.jpg', category: 'industrial' },
-  { src: '/images/const_img10.jpg', category: 'commercial' },
-  { src: '/images/const_img11.jpg', category: 'industrial' },
-  { src: '/images/const_img12.jpg', category: 'industrial' },
-  { src: '/images/const_img13.jpg', category: 'commercial' },
-  { src: '/images/const_img14.jpg', category: 'industrial' },
-  { src: '/images/const_img15.jpg', category: 'industrial' },
-  { src: '/images/const_img16.jpg', category: 'commercial' },
-  { src: '/images/const_img17.jpg', category: 'industrial' },
-  { src: '/images/const_img18.jpg', category: 'industrial' },
-  { src: '/images/const_img19.jpg', category: 'commercial' },
-  { src: '/images/const_img20.jpg', category: 'industrial' },
-  { src: '/images/const_img21.jpg', category: 'industrial' },
-  { src: '/images/const_img22.jpg', category: 'commercial' },
-  { src: '/images/const_img23.jpg', category: 'industrial' },
-  { src: '/images/const_img24.jpg', category: 'industrial' },
-  { src: '/images/const_img25.jpg', category: 'commercial' },
-];
-
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const response = await fetch('/api/gallery');
+        const data = await response.json();
+        setGalleryImages(data.images);
+        setCategories(data.categories);
+      } catch (error) {
+        console.error('Error loading gallery images:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadImages();
+  }, []);
 
   const filteredImages = selectedCategory === 'all'
     ? galleryImages
@@ -70,7 +63,7 @@ export default function Gallery() {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {['all', 'commercial', 'industrial'].map((category) => (
+            {['all', ...categories].map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
@@ -90,27 +83,33 @@ export default function Gallery() {
       {/* Gallery Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredImages.map((image, index) => (
-              <div
-                key={index}
-                className="relative h-[300px] group overflow-hidden rounded-lg cursor-pointer"
-                onClick={() => setSelectedImage(image)}
-              >
-                <Image
-                  src={image.src}
-                  alt={`Project ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">
-                    View Project
-                  </span>
+          {isLoading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative h-[300px] group overflow-hidden rounded-lg cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={`Project ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-lg font-semibold">
+                      View Project
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

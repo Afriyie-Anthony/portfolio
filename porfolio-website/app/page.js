@@ -81,7 +81,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* About Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-28 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-12"
@@ -122,7 +122,7 @@ export default function Home() {
             ].map((item, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 variants={cardVariants}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
@@ -265,7 +265,7 @@ export default function Home() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    className="mt-1 block w-full rounded-md border-[1px] h-[50px] border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -279,7 +279,7 @@ export default function Home() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    className="mt-1 block w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -293,7 +293,7 @@ export default function Home() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    className="mt-1 block w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -307,7 +307,7 @@ export default function Home() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    className="mt-1 block w-full border-[1px] h-[170px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
