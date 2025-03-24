@@ -6,6 +6,27 @@ import HeroSlider from './components/HeroSlider';
 import Footer from './components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+// Animation variants
+const fadeInUp = {
+  initial: { y: 60, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const cardVariants = {
+  initial: { y: 50, opacity: 0 },
+  animate: { y: 0, opacity: 1 }
+};
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -60,65 +81,121 @@ export default function Home() {
       <HeroSlider />
 
       {/* About Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                About Affulexis Enterprise
-              </h2>
-              <p className="text-gray-600 mb-6">
-                We are a leading construction company in Ghana, specializing in road construction,
-                industrial projects, and residential developments. With years of experience and a
-                commitment to excellence, we deliver high-quality results that exceed expectations.
-              </p>
-              <Link href="/about" className="btn-primary">
-                Learn More
-              </Link>
-            </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="/images/const_img4.jpg"
-                alt="About Us"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
+          <motion.div 
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">About Affulexis Enterprise</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We are a leading construction company in Ghana, delivering excellence in every project.
+              Our commitment to quality and innovation sets us apart in the industry.
+            </p>
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {[
+              {
+                icon: '🏗️',
+                title: 'Quality Construction',
+                description: 'We deliver high-quality construction services using modern methodologies and state-of-the-art equipment.'
+              },
+              {
+                icon: '⚡',
+                title: 'Timely Delivery',
+                description: 'Our efficient project management ensures timely completion of all projects.'
+              },
+              {
+                icon: '🤝',
+                title: 'Client Satisfaction',
+                description: 'We prioritize client satisfaction through excellent communication and service delivery.'
+              }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                variants={cardVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We offer comprehensive construction solutions for various needs.
+            </p>
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {[
               {
-                title: 'Road Construction',
-                description: 'Building and maintaining quality roads and highways across Ghana.',
-                icon: '🚧'
+                title: 'General Building',
+                description: 'Comprehensive building solutions for residential, commercial, and industrial structures.',
+                icon: '🏗️'
               },
               {
-                title: 'Industrial Projects',
-                description: 'Specialized construction services for industrial facilities and warehouses.',
-                icon: '🏭'
+                title: 'Construction Works and Road Construction',
+                description: 'Expert road construction and infrastructure development services.',
+                icon: '🛣️'
               },
               {
-                title: 'Residential Development',
-                description: 'Creating comfortable and modern living spaces for communities.',
-                icon: '🏠'
+                title: 'General Merchants',
+                description: 'One-stop shop for all your construction and building material needs.',
+                icon: '🏪'
+              },
+              {
+                title: 'Farms Input',
+                description: 'Providing essential agricultural inputs and supplies to support farming operations.',
+                icon: '🌾'
+              },
+              {
+                title: 'Export and Import General Goods',
+                description: 'Facilitating international trade with our comprehensive import and export services.',
+                icon: '🌍'
               }
             ].map((service, index) => (
-              <div key={index} className="card">
+              <motion.div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                variants={cardVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -154,17 +231,29 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Get in Touch
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Ready to start your construction project? Contact us today for a free consultation.
-              </p>
-              <form onSubmit={handleSubmit} className="space-y-4">
+          <motion.div 
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Have a project in mind? Contact us today for a free consultation.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                     Name
@@ -241,15 +330,27 @@ export default function Home() {
                   </div>
                 )}
               </form>
-            </div>
-            <div className="relative h-[500px]">
-              <Image
-                src="/images/const_img8.jpg"
-                alt="Contact Us"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
+            </motion.div>
+
+            {/* Contact Information */}
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="space-y-6"
+            >
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="relative h-[500px]">
+                  <Image
+                    src="/images/const_img8.jpg"
+                    alt="Contact Us"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
