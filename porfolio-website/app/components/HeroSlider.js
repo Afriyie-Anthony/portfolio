@@ -43,7 +43,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-[90vh]">
       {slides.map((slide, index) => (
         <div
           key={index}
