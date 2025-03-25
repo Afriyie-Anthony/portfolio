@@ -7,17 +7,17 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const slides = [
   {
-    image: '/images/const_img4.jpg',
+    image: '/images/const_img2.jpg',
     title: 'Professional Construction Services',
     subtitle: 'Building Excellence Since 2021'
   },
   {
-    image: '/images/const_img2.jpg',
+    image: '/images/const_img5.jpg',
     title: 'Quality Road Construction',
     subtitle: 'Connecting Communities'
   },
   {
-    image: '/images/const_img3.jpg',
+    image: '/images/Industrial/Concrete_Udran_3.jpg',
     title: 'Industrial Excellence',
     subtitle: 'Building Ghana\'s Future'
   }
@@ -59,9 +59,9 @@ export default function HeroSlider() {
             priority={index === 0}
           />
           <div className="absolute inset-0 bg-black bg-opacity-50" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 text-white">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6">{slide.title}</h2>
-            <p className="text-2xl md:text-4xl">{slide.subtitle}</p>
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{slide.title}</h2>
+            <p className="text-xl md:text-2xl">{slide.subtitle}</p>
           </div>
         </div>
       ))}

@@ -1,8 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   return (
@@ -15,20 +13,6 @@ export default function Footer() {
             <p className="text-gray-400 mb-4">
               Building excellence through quality construction services since 2021.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <FontAwesomeIcon icon={faTwitter} className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}

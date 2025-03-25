@@ -5,6 +5,56 @@ import Footer from '../components/Footer';
 import Image from 'next/image';
 
 export default function About() {
+  const staffMembers = [
+    {
+      name: 'Alex Afful',
+      position: 'MD & Contracts Manager',
+      description: 'Leading the company with extensive experience in contract management and project delivery.'
+    },
+    {
+      name: 'Bransford Afful',
+      position: 'Commercial & Project Manager',
+      description: 'Overseeing commercial aspects and project execution with expertise in construction management.'
+    },
+    {
+      name: 'Anthony Baffoe',
+      position: 'Engineer',
+      description: 'Providing technical expertise and engineering solutions for complex construction projects.'
+    },
+    {
+      name: 'Ben Kwaku Gbadago',
+      position: 'Junior Engineer',
+      description: 'Supporting engineering operations and project implementation.'
+    },
+    {
+      name: 'Adu Gyamfi',
+      position: 'Safety Officer',
+      description: 'Ensuring the highest safety standards across all project sites.'
+    },
+    {
+      name: 'Kuruwaa Comfort',
+      position: 'Procurement Officer',
+      description: 'Managing procurement processes and supply chain operations.'
+    },
+    {
+      name: 'Nicholas Okyere',
+      position: 'QS and Project Manager',
+      description: 'Handling quantity surveying and project management responsibilities.'
+    },
+    {
+      name: 'Lord Afful',
+      position: 'Concrete Technician',
+      description: 'Specializing in concrete work and technical implementation.'
+    }
+  ];
+
+  const previousCompanies = [
+    'OSAP Company Ltd',
+    'Lencon Ltd',
+    'Samotrust Company Ltd.',
+    'Kwatwuma Construction Ltd'
+  ];
+
   return (
     <main>
       <Navbar />
@@ -12,7 +62,7 @@ export default function About() {
       {/* About Hero Section */}
       <section className="relative h-[50vh]">
         <Image
-          src="/images/const_img4.jpg"
+          src="/images/Commercial/6_unitClassroom_EstiSunkwa.jpg"
           alt="About Us Hero"
           fill
           className="object-cover"
@@ -64,8 +114,60 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Company Experience Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our Experience
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Affulexis Ent. staff brings valuable experience from working with leading construction companies in Ghana
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {previousCompanies.map((company, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 className="text-xl font-semibold text-gray-900">{company}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our Team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet the dedicated professionals behind our success
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {staffMembers.map((member, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-primary font-medium mb-3">{member.position}</p>
+                <p className="text-gray-600">{member.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Our team is supported by additional junior staff including store men, buyers, clerks, and other essential personnel who contribute to our project success.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -85,7 +187,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Our Core Values

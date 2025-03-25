@@ -92,8 +92,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">About Affulexis Enterprise</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We are a leading construction company in Ghana, delivering excellence in every project.
-              Our commitment to quality and innovation sets us apart in the industry.
+              We are a group of professionals made up of:
             </p>
           </motion.div>
           <motion.div 
@@ -105,19 +104,19 @@ export default function Home() {
           >
             {[
               {
-                icon: '🏗️',
-                title: 'Quality Construction',
-                description: 'We deliver high-quality construction services using modern methodologies and state-of-the-art equipment.'
+                icon: '📊',
+                title: 'Quantity Surveyors',
+                description: 'Expert professionals ensuring accurate cost estimation and project budgeting.'
               },
               {
-                icon: '⚡',
-                title: 'Timely Delivery',
-                description: 'Our efficient project management ensures timely completion of all projects.'
+                icon: '👷',
+                title: 'Site Engineers',
+                description: 'Skilled engineers overseeing construction operations and technical implementation.'
               },
               {
-                icon: '🤝',
-                title: 'Client Satisfaction',
-                description: 'We prioritize client satisfaction through excellent communication and service delivery.'
+                icon: '🛡️',
+                title: 'Quality and Safety Control Supervisors',
+                description: 'Dedicated supervisors maintaining the highest standards of quality and safety.'
               }
             ].map((item, index) => (
               <motion.div 
@@ -147,7 +146,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer comprehensive construction solutions for various needs.
+              Comprehensive construction management and project delivery services
             </p>
           </motion.div>
           <motion.div 
@@ -159,29 +158,19 @@ export default function Home() {
           >
             {[
               {
-                title: 'General Building',
-                description: 'Comprehensive building solutions for residential, commercial, and industrial structures.',
-                icon: '🏗️'
+                title: 'Project Management',
+                description: 'Comprehensive project planning and execution services.',
+                icon: '📋'
               },
               {
-                title: 'Construction Works and Road Construction',
-                description: 'Expert road construction and infrastructure development services.',
-                icon: '🛣️'
+                title: 'Commercial Management',
+                description: 'Expert financial control and contract administration.',
+                icon: '💰'
               },
               {
-                title: 'General Merchants',
-                description: 'One-stop shop for all your construction and building material needs.',
-                icon: '🏪'
-              },
-              {
-                title: 'Farms Input',
-                description: 'Providing essential agricultural inputs and supplies to support farming operations.',
-                icon: '🌾'
-              },
-              {
-                title: 'Export and Import General Goods',
-                description: 'Facilitating international trade with our comprehensive import and export services.',
-                icon: '🌍'
+                title: 'Quality Assurance',
+                description: 'Rigorous quality control and safety management systems.',
+                icon: '✅'
               }
             ].map((service, index) => (
               <motion.div
@@ -196,6 +185,11 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          <div className="text-center mt-12">
+            <Link href="/services" className="btn-primary">
+              View More Services
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -343,7 +337,7 @@ export default function Home() {
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <div className="relative h-[500px]">
                   <Image
-                    src="/images/const_img8.jpg"
+                    src="/images/contact.jpg"
                     alt="Contact Us"
                     fill
                     className="object-cover rounded-lg"

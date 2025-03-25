@@ -4,7 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Affulexis Enterprise | Excellence in Construction',
+  title: 'Affulexis Enterprise',
   description: 'Professional construction services in Ghana',
   icons: {
     icon: '/favicon.ico',
