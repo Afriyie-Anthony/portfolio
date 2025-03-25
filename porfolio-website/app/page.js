@@ -265,7 +265,7 @@ export default function Home() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full rounded-md border-[1px] h-[50px] border-slate-500 shadow-sm"
+                    className="mt-1 block p-5 w-full rounded-md border-[1px] h-[50px] border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -279,7 +279,7 @@ export default function Home() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
+                    className="mt-1 p-5 block w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -293,7 +293,7 @@ export default function Home() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
+                    className="mt-1 block p-5 w-full border-[1px] h-[50px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
@@ -307,7 +307,7 @@ export default function Home() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full border-[1px] h-[170px] rounded-md border-slate-500 shadow-sm"
+                    className="mt-1 block p-5 w-full border-[1px] h-[170px] rounded-md border-slate-500 shadow-sm"
                   />
                 </div>
                 <div>
