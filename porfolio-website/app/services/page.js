@@ -7,36 +7,45 @@ import Image from 'next/image';
 export default function Services() {
   const services = [
     {
-      title: 'Road Construction',
-      description: 'We specialize in building and maintaining quality roads and highways across Ghana. Our expertise includes asphalt paving, concrete roads, and road rehabilitation.',
-      image: '/images/const_img2.jpg',
+      title: 'Project Management & Planning',
+      description: 'We provide comprehensive project management services that ensure your construction projects are delivered on time, within budget, and to the highest quality standards. Our expertise covers the entire project lifecycle from planning to completion.',
+      image: '/images/Commercial/6_unitClassroom_EstiSunkwa.jpg',
       features: [
-        'Highway construction',
-        'Road rehabilitation',
-        'Bridge construction',
-        'Drainage systems'
+        'Project planning and scheduling',
+        'Progress monitoring and reporting',
+        'Procurement schedule management',
+        'Site safety systems implementation',
+        'Quality control and assurance',
+        'Change order control',
+        'Timeline and budget management'
       ]
     },
     {
-      title: 'Industrial Projects',
-      description: 'Our industrial construction services cater to manufacturing facilities, warehouses, and industrial complexes. We ensure robust and efficient structures for your business needs.',
-      image: '/images/const_img3.jpg',
+      title: 'Commercial Management & Contract Administration',
+      description: 'Our commercial management services ensure optimal financial control and contract compliance throughout your project. We handle both pre and post-contract administration with expertise in budget control and financial reporting.',
+      image: '/images/Commercial/AkrokeriMeth_1.jpg',
       features: [
-        'Factory construction',
-        'Warehouse development',
-        'Industrial facilities',
-        'Loading docks'
+        'Commercial management & budget control',
+        'Pre and post-contract administration',
+        'Financial reporting and reconciliation',
+        'Final accounts preparation',
+        'Claim management',
+        'Value engineering',
+        'Sub-contract administration'
       ]
     },
     {
-      title: 'General Construction',
-      description: 'We offer a wide range of construction services, including residential, commercial, and institutional projects. Our team is equipped to handle all your construction needs.',
-      image: '/images/const_img4.jpg',
+      title: 'Site Systems & Quality Assurance',
+      description: 'We implement robust site systems and quality assurance protocols to ensure the highest standards of construction excellence. Our comprehensive approach covers everything from supply chain management to quality control systems.',
+      image: '/images/Commercial/PatakromClassroom_1.jpg',
       features: [
-        'Housing developments',
-        'Apartment complexes',
-        'Custom homes',
-        'Renovations'
+        'Site systems implementation',
+        'Quality assurance protocols',
+        'Supply chain management',
+        'Reconciliation systems',
+        'Quality control monitoring',
+        'Site safety management',
+        'Performance optimization'
       ]
     }
   ];
@@ -48,7 +57,7 @@ export default function Services() {
       {/* Services Hero Section */}
       <section className="relative h-[50vh]">
         <Image
-          src="/images/const_img2.jpg"
+          src="/images/Commercial/6_unitClassroom_EstiSunkwa.jpg"
           alt="Our Services Hero"
           fill
           className="object-cover"
@@ -61,7 +70,7 @@ export default function Services() {
               Our Services
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-              Comprehensive construction solutions for all your infrastructure needs
+              Professional Construction Management Services
             </p>
           </div>
         </div>
@@ -118,18 +127,18 @@ export default function Services() {
             {[
               {
                 title: 'Expert Team',
-                description: 'Our experienced professionals bring years of expertise to every project.',
+                description: 'We believe in employing the correct people and training them to be better at their jobs, ensuring the highest quality service delivery.',
                 icon: '👥'
               },
               {
-                title: 'Quality Assurance',
-                description: 'We maintain the highest standards of quality in all our work.',
+                title: 'Comprehensive Management',
+                description: 'From project planning to final accounts, we provide end-to-end construction management services that guarantee project success.',
                 icon: '✨'
               },
               {
-                title: 'Timely Delivery',
-                description: 'We complete projects on schedule while maintaining quality standards.',
-                icon: '⏰'
+                title: 'Quality Focus',
+                description: 'Our commitment to quality assurance and continuous improvement ensures superior project outcomes.',
+                icon: '🏆'
               }
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">

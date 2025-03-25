@@ -11,6 +11,8 @@ export default function Gallery() {
   const [galleryImages, setGalleryImages] = useState([]);
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [displayedImages, setDisplayedImages] = useState([]);
+  const [showLoadMore, setShowLoadMore] = useState(false);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -29,9 +31,27 @@ export default function Gallery() {
     loadImages();
   }, []);
 
-  const filteredImages = selectedCategory === 'all'
-    ? galleryImages
-    : galleryImages.filter(image => image.category === selectedCategory);
+  useEffect(() => {
+    const filteredImages = selectedCategory === 'all'
+      ? galleryImages
+      : galleryImages.filter(image => image.category === selectedCategory);
+
+    // Set initial displayed images based on screen size
+    const initialCount = window.innerWidth < 768 ? 3 : 6;
+    setDisplayedImages(filteredImages.slice(0, initialCount));
+    setShowLoadMore(filteredImages.length > initialCount);
+  }, [selectedCategory, galleryImages]);
+
+  const handleLoadMore = () => {
+    const currentCount = displayedImages.length;
+    const filteredImages = selectedCategory === 'all'
+      ? galleryImages
+      : galleryImages.filter(image => image.category === selectedCategory);
+    
+    const nextCount = window.innerWidth < 768 ? currentCount + 3 : currentCount + 6;
+    setDisplayedImages(filteredImages.slice(0, nextCount));
+    setShowLoadMore(nextCount < filteredImages.length);
+  };
 
   return (
     <main>
@@ -88,27 +108,43 @@ export default function Gallery() {
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="relative h-[300px] group overflow-hidden rounded-lg cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <Image
-                    src={image.src}
-                    alt={`Project ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-lg font-semibold">
-                      View Project
-                    </span>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {displayedImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative h-[300px] group overflow-hidden rounded-lg cursor-pointer"
+                    onClick={() => setSelectedImage(image)}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={`Project ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col">
+                      <span className="text-white text-lg font-semibold">
+                        {image.title}
+                      </span>
+                      <span className="text-white text-sm mt-2">
+                        View Project
+                      </span>
+                    </div>
                   </div>
+                ))}
+              </div>
+              
+              {showLoadMore && (
+                <div className="text-center mt-12">
+                  <button
+                    onClick={handleLoadMore}
+                    className="px-8 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+                  >
+                    Load More
+                  </button>
                 </div>
-              ))}
-            </div>
+              )}
+            </>
           )}
         </div>
       </section>

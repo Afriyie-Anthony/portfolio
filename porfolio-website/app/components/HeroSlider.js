@@ -12,12 +12,12 @@ const slides = [
     subtitle: 'Building Excellence Since 2021'
   },
   {
-    image: '/images/const_img2.jpg',
+    image: '/images/const_img5.jpg',
     title: 'Quality Road Construction',
     subtitle: 'Connecting Communities'
   },
   {
-    image: '/images/const_img3.jpg',
+    image: '/images/Industrial/Concrete_Udran_3.jpg',
     title: 'Industrial Excellence',
     subtitle: 'Building Ghana\'s Future'
   }
