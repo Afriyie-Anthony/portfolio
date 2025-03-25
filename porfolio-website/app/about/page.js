@@ -62,7 +62,7 @@ export default function About() {
       {/* About Hero Section */}
       <section className="relative h-[50vh]">
         <Image
-          src="/images/Commercial/6_unitClassroom_EstiSunkwa.jpg"
+          src="/images/const_img2.jpg"
           alt="About Us Hero"
           fill
           className="object-cover"

@@ -221,7 +221,7 @@ export default function Contact() {
                       <h4 className="text-lg font-medium text-gray-900">Email</h4>
                       <p className="mt-1 text-gray-600">
                         <a href="mailto:owusuboat05@gmail.com" className="hover:text-primary">
-                          owusuboat05@gmail.com
+                        affulexis1971@gmail.com
                         </a>
                       </p>
                     </div>

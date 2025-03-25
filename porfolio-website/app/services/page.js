@@ -9,7 +9,7 @@ export default function Services() {
     {
       title: 'Project Management & Planning',
       description: 'We provide comprehensive project management services that ensure your construction projects are delivered on time, within budget, and to the highest quality standards. Our expertise covers the entire project lifecycle from planning to completion.',
-      image: '/images/Commercial/6_unitClassroom_EstiSunkwa.jpg',
+      image: '/images/const_img2.jpg',
       features: [
         'Project planning and scheduling',
         'Progress monitoring and reporting',
@@ -23,7 +23,7 @@ export default function Services() {
     {
       title: 'Commercial Management & Contract Administration',
       description: 'Our commercial management services ensure optimal financial control and contract compliance throughout your project. We handle both pre and post-contract administration with expertise in budget control and financial reporting.',
-      image: '/images/Commercial/AkrokeriMeth_1.jpg',
+      image: '/images/const_img3.jpg',
       features: [
         'Commercial management & budget control',
         'Pre and post-contract administration',
@@ -37,7 +37,7 @@ export default function Services() {
     {
       title: 'Site Systems & Quality Assurance',
       description: 'We implement robust site systems and quality assurance protocols to ensure the highest standards of construction excellence. Our comprehensive approach covers everything from supply chain management to quality control systems.',
-      image: '/images/Commercial/PatakromClassroom_1.jpg',
+      image: '/images/const_img4.jpg',
       features: [
         'Site systems implementation',
         'Quality assurance protocols',
@@ -57,7 +57,7 @@ export default function Services() {
       {/* Services Hero Section */}
       <section className="relative h-[50vh]">
         <Image
-          src="/images/Commercial/6_unitClassroom_EstiSunkwa.jpg"
+          src="/images/const_img2.jpg"
           alt="Our Services Hero"
           fill
           className="object-cover"
