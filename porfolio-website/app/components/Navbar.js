@@ -35,7 +35,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link 
                 href="/" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-md font-medium transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-primary' 
                     : 'text-white hover:text-primary'
@@ -45,7 +45,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/about" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-md font-medium transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-primary' 
                     : 'text-white hover:text-primary'
@@ -55,7 +55,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/services" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-md font-medium transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-primary' 
                     : 'text-white hover:text-primary'
@@ -65,7 +65,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/gallery" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-md font-medium transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-primary' 
                     : 'text-white hover:text-primary'
@@ -75,7 +75,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/contact" 
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-md font-medium transition-colors duration-300 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-primary' 
                     : 'text-white hover:text-primary'
