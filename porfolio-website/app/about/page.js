@@ -89,10 +89,10 @@ export default function About() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Affulexis Enterprise is a privately owned Ghanaian company based at Sunyam bono region.
+                  Affulexis Enterprise is a privately owned Ghanaian company based at Sunyani Bono region.
                 </p>
                 <p>
-                  Affulexis Enterprise with various professional personnel if focus on delivering unique service on any given project both cominercial and industrial. Benefit derived from working with Affulexis Enterprise includes diligent coordination of work between the company's professionals and the customer in question for timely and sansfactory completion of project giving client's value for their money.
+                  Affulexis Enterprise with various professional personnel focuses on delivering unique services on any given project both commercial and industrial. Benefits derived from working with Affulexis Enterprise includes, diligent coordination of work between the company's professionals and the customer in question for timely and satisfactory completion of project giving client's value for their money.
                 </p>
                 <p>
                   Our company's focus on operation time delivery services and the application of project management techniques to ensure the procurement of materials, equipment and management team to handle any project start to finish on a timely manner.
@@ -173,13 +173,13 @@ export default function About() {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600">
-                The deliver the highest quality construction services at fair and market competitive prices using modern methodologies to excite any scale of work.
+                To deliver the highest quality construction services at fair and market competitive prices, using modern methodologies to execute any scale of work.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600">
-                To maintain the higher levels of professionalism, strategy, honesty and fairness in our relationships with our clients supplies subcontractors and customers.
+                To maintain the highest levels of professionalism, strategy, honesty and fairness in our relationships with our clients suppliers subcontractors and customers.
               </p>
             </div>
           </div>
