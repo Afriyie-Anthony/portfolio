@@ -87,7 +87,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden mr-4">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none transition-colors duration-300 ${

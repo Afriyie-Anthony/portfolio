@@ -79,26 +79,34 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Gallery Filters */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {['all', ...categories].map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-primary text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
-          </div>
+      {/* Categories */}
+      <div className="mt-12 mb-12">
+        <div className="flex md:flex-wrap md:justify-center overflow-x-auto md:overflow-x-visible -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <button
+            onClick={() => setSelectedCategory('all')}
+            className={`px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap mr-3 transition-all duration-300 ${
+              selectedCategory === 'all'
+                ? 'bg-primary text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            All
+          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap mr-3 transition-all duration-300 ${
+                selectedCategory === category
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-      </section>
+      </div>
 
       {/* Gallery Grid */}
       <section className="py-12">
