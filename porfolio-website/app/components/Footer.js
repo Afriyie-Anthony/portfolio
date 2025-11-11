@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-200 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -15,7 +15,7 @@ export default function Footer() {
              <Image src="/logo.png" alt="Logo" width={100} height={40} />  
             </Link>
             <h3 className="text-2xl font-bold text-primary mb-4">Affulexis Enterprise</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-900 mb-4">
               Building excellence through quality construction services since 2021.
             </p>
           </div>
@@ -25,27 +25,27 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href="/" className="text-gray-900 hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href="/about" className="text-gray-900 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href="/services" className="text-gray-900 hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href="/gallery" className="text-gray-900 hover:text-primary transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-primary transition-colors">
+                <Link href="/contact" className="text-gray-900 hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
@@ -54,32 +54,32 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
             <div className="space-y-2">
-              <p className="text-gray-300">
+              <p className="text-gray-900">
                 H/N. 151/4, Sunyani Newtown
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-900">
                 Box 1320, Sunyani
               </p>
               <div className="space-y-1">
-                <p className="text-gray-300">
+                <p className="text-gray-900">
                   <a href="tel:+233240139683" className="hover:text-primary">
                     +233 24 013 9683
                   </a>
                 </p>
-                <p className="text-gray-300">
+                <p className="text-gray-900">
                   <a href="tel:+233546248694" className="hover:text-primary">
                     +233 54 624 8694
                   </a>
                 </p>
-                <p className="text-gray-300">
+                <p className="text-gray-900">
                   <a href="tel:+233203858047" className="hover:text-primary">
                     +233 20 385 8047
                   </a>
                 </p>
               </div>
-              <p className="text-gray-300">
+              <p className="text-gray-900">
                 <a href="mailto:affulexis1971@gmail.com" className="hover:text-primary">
                   affulexis1971@gmail.com
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-900">
           <p>&copy; {new Date().getFullYear()} Affulexis Enterprise. All rights reserved.</p>
         </div>
       </div>
