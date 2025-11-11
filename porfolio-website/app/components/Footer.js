@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 export default function Footer() {
   return (
@@ -9,6 +11,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
+            <Link href="/">
+             <Image src="/logo.png" alt="Logo" width={100} height={40} />  
+            </Link>
             <h3 className="text-2xl font-bold text-primary mb-4">Affulexis Enterprise</h3>
             <p className="text-gray-400 mb-4">
               Building excellence through quality construction services since 2021.
@@ -90,4 +95,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}
